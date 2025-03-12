@@ -134,3 +134,19 @@
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
 }
+
+@layer utilities {
+  @keyframes ripple {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+
+  .animate-ripple {
+    animation: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s) infinite;
+  }
+}

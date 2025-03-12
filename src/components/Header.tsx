@@ -11,14 +11,14 @@ const Header = () => {
         {/* Name */}
         <Link href='/'>
           <h1 className='text-4xl font-semibold'>
-            Trung Kien <span className='text-green-600'>.</span>
+            Devlin <span className='text-green-600'>.</span>
           </h1>
         </Link>
 
         {/* Desktop Nav + Download Resumet*/}
         <div className='hidden xl:flex items-center gap-8'>
           <Nav />
-          <Link href='/'>
+          <Link href='/' className='hidden'>
             <Button className='bg-green-800 hover:bg-green-700'>
               <FileDown />
               Download Resume
