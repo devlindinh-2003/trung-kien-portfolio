@@ -10,7 +10,7 @@ export default function Home() {
       <div className='container mx-3 xl:mx-auto'>
         <div className='flex flex-col xl:flex-row  items-center justify-between xl:pt-8 xl:pb-24 '>
           {/* Text */}
-          <div className='text-center xl:text-left'>
+          <div className='text-center xl:text-left order-2 xl:order-none'>
             <span className='text-xl'>Software Enginner</span>
             <h1 className='h1 mb-6'>
               Hello I&apos;m <br />{' '}
@@ -25,10 +25,10 @@ export default function Home() {
               </TextAnimate>
               {/* <span className='text-green-600'>Trung Kien</span> */}
             </h1>
-            <p className='max-w-[300px] mb-9 text-white/80 mr-3'>
-              A professional dedicated to continuous learning, including new
-              programming languages and technologies, to contribute effectively
-              to team success.
+            <p className='max-w-[350px] mb-9 text-white/80 mr-3'>
+              I&apos;m a Frontend and Mobile Developer with experience in
+              building websites and mobile applications. Check out my projects
+              and skills!
             </p>
 
             {/* Download CV */}
@@ -52,7 +52,7 @@ export default function Home() {
             </div>
           </div>
           {/* Photo */}
-          <div>
+          <div className='order-1 xl:order-none'>
             <Photo />
           </div>
         </div>

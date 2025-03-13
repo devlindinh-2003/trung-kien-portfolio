@@ -31,7 +31,11 @@ const Photo = () => {
             fill
             sizes='(max-width: 768px) 298px, 550px'
           />
-          <Ripple mainCircleSize={250} numCircles={10} />
+          <Ripple
+            mainCircleSize={250}
+            numCircles={10}
+            className='hidden xl:flex'
+          />
         </div>
       </motion.div>
     </div>
