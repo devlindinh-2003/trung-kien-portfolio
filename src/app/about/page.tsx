@@ -13,250 +13,392 @@ import {
   FaHtml5,
   FaCss3,
   FaJs,
-  FaFigma,
   FaReact,
   FaMobile,
-  FaMobileAlt,
   FaNodeJs,
   FaExternalLinkAlt,
+  FaBriefcase,
+  FaGraduationCap,
+  FaTools,
 } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 
-// Education
-
-// Experince
+// Experience
 const experience = {
-  icon: '',
-  title: 'My experience',
+  icon: <FaBriefcase className='text-3xl text-green-500' />,
+  title: 'My Experience',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.',
+    'My professional journey as a software engineer, focusing on web and mobile development with modern JavaScript frameworks.',
   items: [
     {
       company: 'FPT Software',
       position: 'Software Engineer',
       duration: '9/2023 - 12/2023',
+      description:
+        'Developed and maintained web applications using React and Next.js. Collaborated with cross-functional teams to deliver high-quality software solutions.',
     },
   ],
 };
 
 // Education
 const education = {
-  icon: '',
-  title: 'My education',
+  icon: <FaGraduationCap className='text-3xl text-green-500' />,
+  title: 'My Education',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.',
+    'My academic background and continuous learning journey through formal education and specialized online courses to stay current with industry trends.',
   items: [
     {
       institution: 'FPT University',
       degree: 'Bachelor of Software Engineering',
       duration: '2022 - 2025',
       link: '',
+      description:
+        'Focusing on software development methodologies, algorithms, and modern programming paradigms.',
     },
     {
       institution: 'Udemy',
       degree: 'The Complete JavaScript Course 2025: From Zero to Expert!',
       duration: '2023',
       link: 'https://www.udemy.com/certificate/UC-301710af-3afe-4f99-a39a-99b7887ff8da/',
+      description:
+        'Comprehensive JavaScript training covering ES6+, asynchronous programming, and modern development practices.',
     },
     {
       institution: 'Udemy',
       degree: 'Node.js, Express, MongoDB & More: The Complete Bootcamp',
       duration: '2023',
       link: 'https://www.udemy.com/certificate/UC-bd9d982e-1a72-45db-844d-10fa97851321/',
+      description:
+        'Backend development with Node.js, building RESTful APIs, and working with MongoDB databases.',
     },
     {
       institution: 'Udemy',
       degree: 'The Ultimate React Course 2024: React, Next.js, Redux & More',
       duration: '2024',
       link: 'https://www.udemy.com/certificate/UC-6c18df0c-02fe-434b-8726-1705308a26c0/',
+      description:
+        'Advanced React concepts including hooks, context API, Next.js, and state management with Redux.',
     },
   ],
 };
 
 // Skills
 const skills = {
-  title: 'My skills',
+  icon: <FaTools className='text-3xl text-green-500' />,
+  title: 'My Skills',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.',
+    "Technical skills I've developed throughout my career, focusing on frontend and mobile development technologies with a growing expertise in backend development.",
   skilllist: [
     {
       icon: <FaHtml5 />,
-      name: 'html 5',
+      name: 'HTML 5',
+      level: 'Advanced',
     },
     {
       icon: <FaCss3 />,
-      name: 'css 3',
+      name: 'CSS 3',
+      level: 'Advanced',
     },
     {
       icon: <FaJs />,
-      name: 'javascript',
+      name: 'JavaScript',
+      level: 'Advanced',
     },
     {
       icon: <FaReact />,
-      name: 'reactJs',
+      name: 'React.js',
+      level: 'Advanced',
     },
     {
       icon: <SiNextdotjs />,
-      name: 'nextJs',
+      name: 'Next.js',
+      level: 'Intermediate',
     },
     {
       icon: <SiTailwindcss />,
-      name: 'tailwind.css',
+      name: 'Tailwind CSS',
+      level: 'Advanced',
     },
     {
       icon: <FaNodeJs />,
-      name: 'node.js',
+      name: 'Node.js',
+      level: 'Intermediate',
     },
     {
       icon: <FaMobile />,
-      name: 'React native',
+      name: 'React Native',
+      level: 'Intermediate',
     },
   ],
 };
 
 const AboutPage = () => {
+  // Animation variants
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * index,
+        duration: 0.5,
+        ease: [0.43, 0.13, 0.23, 0.96],
+      },
+    }),
+  };
+
   return (
     <motion.div
-      className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'
+      className='min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 bg-black'
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
         transition: {
-          delay: 2.4,
-          duration: 0.4,
+          duration: 0.6,
           ease: 'easeIn',
         },
       }}
     >
-      <div className='container mx-auto'>
+      <div className='container mx-auto max-w-7xl'>
         <Tabs
           defaultValue='experience'
-          className='flex flex-col xl:flex-row gap-[60px] w-full'
+          className='flex flex-col xl:flex-row gap-10 w-full'
         >
-          <TabsList className='flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6'>
-            <TabsTrigger value='experience'>Experience</TabsTrigger>
-            <TabsTrigger value='education'>Education</TabsTrigger>
-            <TabsTrigger value='skills'>Skills</TabsTrigger>
-          </TabsList>
+          {/* Tabs Navigation */}
+          <div className='w-full xl:w-1/4'>
+            <TabsList className='flex flex-col w-full gap-3 p-1 bg-black/50 backdrop-blur-sm rounded-xl border border-green-500/20'>
+              <TabsTrigger
+                value='experience'
+                className='flex items-center gap-3 text-lg py-4 data-[state=active]:bg-green-500/10 data-[state=active]:text-green-500 transition-all duration-300'
+              >
+                <FaBriefcase className='text-xl' />
+                Experience
+              </TabsTrigger>
+              <TabsTrigger
+                value='education'
+                className='flex items-center gap-3 text-lg py-4 data-[state=active]:bg-green-500/10 data-[state=active]:text-green-500 transition-all duration-300'
+              >
+                <FaGraduationCap className='text-xl' />
+                Education
+              </TabsTrigger>
+              <TabsTrigger
+                value='skills'
+                className='flex items-center gap-3 text-lg py-4 data-[state=active]:bg-green-500/10 data-[state=active]:text-green-500 transition-all duration-300'
+              >
+                <FaTools className='text-xl' />
+                Skills
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Profile Summary */}
+            <div className='mt-8 p-6 rounded-xl bg-[#121214] border border-green-500/10 hidden xl:block'>
+              <h3 className='text-xl font-semibold mb-3 text-white/90'>
+                About Me
+              </h3>
+              <p className='text-white/60 mb-4'>
+                A passionate software engineer specializing in modern web and
+                mobile development, constantly learning and exploring new
+                technologies to create exceptional digital experiences.
+              </p>
+              <div className='flex items-center gap-2'>
+                <div className='w-2 h-2 rounded-full bg-green-500 animate-pulse'></div>
+                <span className='text-green-500 text-sm'>
+                  Available for opportunities
+                </span>
+              </div>
+            </div>
+          </div>
 
           {/* Content */}
-          <div className='min-h-[70vh] w-full px-4 xl:px-0'>
-            <TabsContent value='experience'>
-              <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                <h3 className='text-4xl font-bold'>{experience.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+          <div className='w-full xl:w-3/4 min-h-[70vh]'>
+            {/* Experience Tab */}
+            <TabsContent
+              value='experience'
+              className='focus-visible:outline-none focus-visible:ring-0'
+            >
+              <motion.div
+                className='flex flex-col gap-8'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className='flex items-center gap-4'>
+                  {experience.icon}
+                  <h2 className='text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-green-500 bg-clip-text text-transparent'>
+                    {experience.title}
+                  </h2>
+                </div>
+
+                <p className='text-white/70 text-lg max-w-3xl'>
                   {experience.description}
                 </p>
-                <ScrollArea className='h-[400px]'>
-                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
-                    {experience.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 mb-3'
-                        >
-                          <span className='text-green-600'>
-                            {item.duration}
-                          </span>
-                          <h3 className='text-xl max-w-[260px] min-h-[60[px] text-center lg:text-left mb-9'>
-                            {item.position}
-                          </h3>
-                          <div className='flex items-center gap-3'>
-                            {/* dot */}
-                            <span className='w-[6px] h-[6px] rounded full bg-green-600'></span>
-                            <p className='text-white/60'>{item.company}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
+
+                <ScrollArea className='h-[450px] pr-4'>
+                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
+                    {experience.items.map((item, index) => (
+                      <motion.li
+                        key={index}
+                        custom={index}
+                        variants={fadeIn}
+                        initial='initial'
+                        animate='animate'
+                        className='bg-gradient-to-br from-[#1a1a1f] to-[#232329] p-6 rounded-xl border border-green-500/10 hover:border-green-500/30 transition-all duration-300 shadow-lg hover:shadow-green-500/5'
+                      >
+                        <span className='text-green-500 font-medium inline-block mb-3 px-3 py-1 bg-green-500/10 rounded-full text-sm'>
+                          {item.duration}
+                        </span>
+                        <h3 className='text-xl font-bold text-white mb-3'>
+                          {item.position}
+                        </h3>
+                        <p className='text-white/60 text-sm mb-4'>
+                          {item.description ||
+                            'Worked on various projects using modern web technologies.'}
+                        </p>
+                        <div className='flex items-center gap-3'>
+                          <span className='w-2 h-2 rounded-full bg-green-500'></span>
+                          <p className='text-white/80 font-medium'>
+                            {item.company}
+                          </p>
+                        </div>
+                      </motion.li>
+                    ))}
                   </ul>
                 </ScrollArea>
-              </div>
+              </motion.div>
             </TabsContent>
-            <TabsContent value='education'>
-              <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                <h3 className='text-4xl font-bold'>{education.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+
+            {/* Education Tab */}
+            <TabsContent
+              value='education'
+              className='focus-visible:outline-none focus-visible:ring-0'
+            >
+              <motion.div
+                className='flex flex-col gap-8'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className='flex items-center gap-4'>
+                  {education.icon}
+                  <h2 className='text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-green-500 bg-clip-text text-transparent'>
+                    {education.title}
+                  </h2>
+                </div>
+
+                <p className='text-white/70 text-lg max-w-3xl'>
                   {education.description}
                 </p>
-                <ScrollArea className='h-[400px]'>
-                  {' '}
-                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
-                    {education.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 mb-3'
-                        >
-                          <span className='text-green-600'>
-                            {item.duration}
-                          </span>
-                          <h3 className='text-xl max-w-auto min-h-[60px] text-center lg:text-left mb-9'>
-                            {item.degree}
-                          </h3>
-                          <div className='flex items-center justify-between gap-2'>
-                            <div className='flex items-center gap-3'>
-                              {/* dot */}
-                              <span className='w-[6px] h-[6px] rounded-full bg-green-600'></span>
-                              <p className='text-muted-foreground'>
-                                {item.institution}
-                              </p>
-                            </div>
 
-                            {item.link && (
-                              <TooltipProvider>
-                                <Tooltip>
-                                  <TooltipTrigger asChild>
-                                    <a
-                                      href={item.link}
-                                      target='_blank'
-                                      rel='noopener noreferrer'
-                                      className='text-green-600 hover:text-green-500 transition-colors'
-                                    >
-                                      <FaExternalLinkAlt className='w-4 h-4' />
-                                    </a>
-                                  </TooltipTrigger>
-                                  <TooltipContent>
-                                    <p>Open certification</p>
-                                  </TooltipContent>
-                                </Tooltip>
-                              </TooltipProvider>
-                            )}
+                <ScrollArea className='h-[450px] pr-4'>
+                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
+                    {education.items.map((item, index) => (
+                      <motion.li
+                        key={index}
+                        custom={index}
+                        variants={fadeIn}
+                        initial='initial'
+                        animate='animate'
+                        className='bg-gradient-to-br from-[#1a1a1f] to-[#232329] p-6 rounded-xl border border-green-500/10 hover:border-green-500/30 transition-all duration-300 shadow-lg hover:shadow-green-500/5'
+                      >
+                        <span className='text-green-500 font-medium inline-block mb-3 px-3 py-1 bg-green-500/10 rounded-full text-sm'>
+                          {item.duration}
+                        </span>
+                        <h3 className='text-xl font-bold text-white mb-2 line-clamp-2'>
+                          {item.degree}
+                        </h3>
+                        <p className='text-white/60 text-sm mb-4 line-clamp-3'>
+                          {item.description}
+                        </p>
+                        <div className='flex items-center justify-between'>
+                          <div className='flex items-center gap-3'>
+                            <span className='w-2 h-2 rounded-full bg-green-500'></span>
+                            <p className='text-white/80 font-medium'>
+                              {item.institution}
+                            </p>
                           </div>
-                        </li>
-                      );
-                    })}
+
+                          {item.link && (
+                            <TooltipProvider>
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <a
+                                    href={item.link}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='text-green-500 hover:text-green-400 transition-colors p-2 bg-green-500/10 rounded-full'
+                                  >
+                                    <FaExternalLinkAlt className='w-4 h-4' />
+                                  </a>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  <p>View Certificate</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          )}
+                        </div>
+                      </motion.li>
+                    ))}
                   </ul>
                 </ScrollArea>
-              </div>
+              </motion.div>
             </TabsContent>
-            <TabsContent value='skills' className='w-full h-full'>
-              <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                <h3 className='text-4xl font-bold'>{skills.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+
+            {/* Skills Tab */}
+            <TabsContent
+              value='skills'
+              className='focus-visible:outline-none focus-visible:ring-0'
+            >
+              <motion.div
+                className='flex flex-col gap-8'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className='flex items-center gap-4'>
+                  {skills.icon}
+                  <h2 className='text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-green-500 bg-clip-text text-transparent'>
+                    {skills.title}
+                  </h2>
+                </div>
+
+                <p className='text-white/70 text-lg max-w-3xl'>
                   {skills.description}
                 </p>
-              </div>
-              <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px] mt-5'>
-                {skills.skilllist.map((skill, index) => {
-                  return (
-                    <li key={index}>
+
+                <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-4'>
+                  {skills.skilllist.map((skill, index) => (
+                    <motion.li
+                      key={index}
+                      custom={index}
+                      variants={fadeIn}
+                      initial='initial'
+                      animate='animate'
+                    >
                       <TooltipProvider delayDuration={100}>
                         <Tooltip>
-                          <TooltipTrigger className='w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group'>
-                            <div className='text-6xl group-hover:text-green-600 transition-all duration-300'>
+                          <TooltipTrigger className='w-full h-[160px] bg-gradient-to-br from-[#1a1a1f] to-[#232329] rounded-xl flex flex-col justify-center items-center group border border-green-500/10 hover:border-green-500/30 transition-all duration-300 shadow-lg hover:shadow-green-500/5'>
+                            <div className='text-5xl group-hover:text-green-500 transition-all duration-300 mb-4'>
                               {skill.icon}
                             </div>
+                            <span className='text-white/80 group-hover:text-white transition-all duration-300 capitalize text-sm'>
+                              {skill.name}
+                            </span>
+                            <span className='text-xs text-green-500/80 mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300'>
+                              {skill.level}
+                            </span>
                           </TooltipTrigger>
                           <TooltipContent>
-                            <p className='capitalize'>{skill.name}</p>
+                            <p className='capitalize'>
+                              {skill.name} - {skill.level}
+                            </p>
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
-                    </li>
-                  );
-                })}
-              </ul>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
             </TabsContent>
           </div>
         </Tabs>
