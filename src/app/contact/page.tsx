@@ -97,6 +97,7 @@ export default function ContactPage() {
           message: '',
         });
       })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .catch((error: any) => {
         console.error('Error sending message:', error);
         alert('Failed to send message.');

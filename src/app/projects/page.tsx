@@ -19,7 +19,8 @@ const projects = [
       'A Coffee Cat Cafe website allows users to easily register and book their visits by selecting a preferred date and time.',
     stack: [
       { name: 'React JS' },
-      { name: 'Redux Toolkit' },
+      { name: 'Tailwind CSS' },
+      { name: 'Tanstack Query' },
       { name: 'MUI package' },
     ],
     image: '/koheneko.jpg',
@@ -32,7 +33,12 @@ const projects = [
     title: 'VFoody - Delivery App',
     description:
       'A platform to connect local food and beverage retailers, and restaurants with Vinhome residents.',
-    stack: [{ name: 'React Native' }],
+    stack: [
+      { name: 'React Native' },
+      { name: 'Nativewind CSS' },
+      { name: 'Reduxt Toolkit' },
+      { name: 'React Native paper' },
+    ],
     image: '/vfoody.png',
     live: '',
     github: '',
@@ -43,7 +49,13 @@ const projects = [
     title: 'Garment Warehouse System',
     description:
       'A platform focused on importing/exporting of materials and products in garment warehouses and quality control.',
-    stack: [{ name: 'React JS' }, { name: 'React Native' }],
+    stack: [
+      { name: 'React JS' },
+      { name: 'React Native' },
+      { name: 'Tailwind CSS' },
+      { name: 'React Native Paper' },
+      { name: 'Tanstack query' },
+    ],
     image: '/garmentwms.png',
     live: '',
     github: '',
@@ -54,7 +66,9 @@ export default function ProjectsPage() {
   const [project, setProject] = useState(projects[0]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const swiperRef = useRef<any>(null);
 
   // Handle initial animation completion
@@ -69,6 +83,7 @@ export default function ProjectsPage() {
   }, []);
 
   // Handle slide change
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSlideChange = (swiper: any) => {
     setIsAnimating(true);
     const currentIndex = swiper.activeIndex;
