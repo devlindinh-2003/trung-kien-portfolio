@@ -89,40 +89,19 @@ export default function Home() {
             </motion.p>
 
             {/* CTA Buttons */}
-            <div className='flex flex-col sm:flex-row items-center gap-5 mb-10'>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.8 }}
-              >
-                <Button className='bg-green-600 hover:bg-green-500 text-white w-full sm:w-auto px-6 py-6 rounded-lg transition-all duration-300 shadow-lg shadow-green-600/20 hover:shadow-green-500/30'>
-                  <a
-                    href='/cv.pdf'
-                    className='flex items-center gap-2'
-                    download
-                  >
-                    <span>Download CV</span>
-                    <FiDownload className='animate-bounce' />
-                  </a>
-                </Button>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 2 }}
-              >
-                <Link href='/projects'>
-                  <Button
-                    variant='outline'
-                    className='cursor-pointer bg-white text-black hover:bg-gray-100 w-full sm:w-auto px-6 py-6 rounded-lg transition-all duration-300 font-medium border-none'
-                  >
-                    <span>View Projects</span>
-                    <FiArrowRight className='ml-2 animate-bounce' />
-                  </Button>
-                </Link>
-              </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.8 }}
+              className='mb-10'
+            >
+              <Button className='bg-green-600 hover:bg-green-500 text-white w-full sm:w-auto px-6 py-6 rounded-lg transition-all duration-300 shadow-lg shadow-green-600/20 hover:shadow-green-500/30'>
+                <a href='/cv.pdf' className='flex items-center gap-2' download>
+                  <span>Download CV</span>
+                  <FiDownload className='animate-bounce' />
+                </a>
+              </Button>
+            </motion.div>
 
             {/* Social Links */}
             <motion.div
