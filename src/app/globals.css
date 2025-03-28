@@ -150,3 +150,7 @@
     animation: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s) infinite;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

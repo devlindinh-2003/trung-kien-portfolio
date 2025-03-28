@@ -7,6 +7,9 @@ import { Button } from '@/components/ui/button';
 import { FiDownload, FiArrowRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import AboutPage from './about/page';
+import ProjectsPage from './projects/page';
+import ContactPage from './contact/page';
 
 export default function Home() {
   // Animation variants
@@ -34,7 +37,11 @@ export default function Home() {
   return (
     <section className='min-h-screen flex items-center py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden bg-black'>
       <div className='container mx-auto px-4 sm:px-6'>
-        <div className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-0 items-center'>
+        {/* Home  */}
+        <section
+          id='home'
+          className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-0 items-cente xl:py-32'
+        >
           {/* Text Content */}
           <motion.div
             variants={fadeIn('right', 0.3)}
@@ -154,10 +161,22 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
-        </div>
+        </section>
 
-        {/* Decorative element - bottom */}
-        <div className='absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-green-500/5 to-transparent -z-10'></div>
+        {/* About Section */}
+        <section id='about' className='xl:py-32'>
+          <AboutPage />
+        </section>
+
+        {/* Projects Section */}
+        <section id='projects' className='xl:py-32'>
+          <ProjectsPage />
+        </section>
+
+        {/* Contact Section */}
+        <section id='contact' className='xl:py-32'>
+          <ContactPage />
+        </section>
       </div>
     </section>
   );
