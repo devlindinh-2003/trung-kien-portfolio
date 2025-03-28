@@ -4,9 +4,8 @@ import { TextAnimate } from '@/components/magicui/text-animate';
 import Photo from '@/components/Photo';
 import Socials from '@/components/Socials';
 import { Button } from '@/components/ui/button';
-import { FiDownload, FiArrowRight } from 'react-icons/fi';
+import { FiDownload } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import AboutPage from './about/page';
 import ProjectsPage from './projects/page';
 import ContactPage from './contact/page';
@@ -40,7 +39,7 @@ export default function Home() {
         {/* Home  */}
         <section
           id='home'
-          className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-0 items-cente xl:py-32'
+          className='grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-0 items-cente py-32'
         >
           {/* Text Content */}
           <motion.div
@@ -143,17 +142,17 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id='about' className='xl:py-32'>
+        <section id='about'>
           <AboutPage />
         </section>
 
         {/* Projects Section */}
-        <section id='projects' className='xl:py-32'>
+        <section id='projects'>
           <ProjectsPage />
         </section>
 
         {/* Contact Section */}
-        <section id='contact' className='xl:py-32'>
+        <section id='contact'>
           <ContactPage />
         </section>
       </div>

@@ -133,7 +133,7 @@ export default function ContactPage() {
         opacity: 1,
         transition: { duration: 0.6, ease: 'easeOut' },
       }}
-      className='py-16 px-4 sm:px-6 min-h-screen flex items-center bg-black'
+      className='py-32 px-4 sm:px-6 min-h-screen flex items-center bg-black '
     >
       <div className='container mx-auto max-w-7xl'>
         <motion.div

@@ -149,7 +149,7 @@ const AboutPage = () => {
 
   return (
     <motion.div
-      className='min-h-screen flex items-center justify-between py-16 px-4 sm:px-6 bg-black'
+      className='min-h-screen flex items-center justify-between  px-4 sm:px-6 bg-black py-32'
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,

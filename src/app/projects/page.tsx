@@ -143,7 +143,7 @@ export default function ProjectsPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className='min-h-screen py-12 px-4 sm:px-6 md:py-16 lg:py-20 flex items-center bg-black'
+      className='min-h-screen  px-4 sm:px-6 md:py-16 lg:py-20 flex items-center bg-black py-32'
     >
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row gap-8 lg:gap-12'>
